@@ -56,7 +56,7 @@ func (sp *Speed) printLog(now time.Time) {
 	if now_used == 0 || sp.TotalSec == 0 {
 		return
 	}
-	log_format := "total=%d,qps=%d,total_%ds=%d,speed=%.2fMps,total_size=%s,total_suc=%d,"+fmt.Sprintf("total_%ds_suc",now_used)
+	log_format := "total=%d,qps=%d,total_%ds=%d,speed=%.2fMps,total_size=%s,total_suc=%d,"+fmt.Sprintf("total_%ds_suc",int64(now_used))+"=%d"
 	size_speed := float64(sp.TotalSecSize) / now_used / (1024 * 1024)
 
 	TotalSize_str := ""
